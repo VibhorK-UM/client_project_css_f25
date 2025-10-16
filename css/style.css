@@ -1,0 +1,187 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: repeat(8, auto);
+}
+
+/* Header layout */
+header {
+    display: contents;
+}
+
+/* Logo fixed in columns 2-3, rows 1-2 */
+.logo {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 10px;
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 2;
+}
+
+/* H1 spans columns 2-4, starts at row 4 */
+header h1 {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    padding-left: 20px;
+    background-color: #00274C; 
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+    grid-column: 1 / -1;
+    grid-row: 4;
+}
+
+/* Navigation spans all columns, starts at row 3 */
+nav {
+    width: 100%;
+    background-color: #FFCB05; 
+    grid-column: 1 / -1;
+    grid-row: 3;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    flex: 1;
+    text-align: center;
+    border-right: 1px solid #00274C;
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #00274C; 
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Active/Selected state */
+/* nav a:active,
+nav a:focus {
+    background-color: #00274C; 
+    color: #FFCB05; 
+} */
+
+/* Skip to main content link */
+.skip a {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip a:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    background-color: #00274C;
+    color: white;
+    text-decoration: none;
+}
+
+/* Main content */
+main {
+    padding: 20px;
+    grid-column: 1 / -1;
+}
+
+/* Images span columns 2-3 */
+main img:not(.logo) {
+    grid-column: 2 / 4;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    margin-bottom: 30px;
+    background-color: #00274C; 
+    color: #FFCB05; 
+    padding: 20px;
+}
+
+h2 {
+    color: #FFCB05; 
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Lists */
+ul, ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Links */
+a {
+    color: #FFCB05; 
+    text-decoration: underline;
+}
+
+a:hover:not(.footerlink) {
+    color: white;
+}
+
+/* Changing styles of active links */
+.current {
+    background-color: #00274C; 
+    color: #FFCB05; 
+}
+/* Footer */
+footer {
+    background-color: #00274C;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    grid-column: 1 / -1;
+}
+
+footer a {
+    color: #FFCB05;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
